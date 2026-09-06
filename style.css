@@ -149,16 +149,16 @@ nav ul a:hover::after{width:100%;}
   53%{opacity:1;} 56%{opacity:0;} 100%{opacity:0;}
 }
 
-.cat-paw-groom{
-  transform-box:fill-box; transform-origin:center bottom;
-  animation:catPawRub 1s ease-in-out infinite, catPawVisible 18s linear infinite;
+.cat-groom-leg{
+  transform-box:fill-box; transform-origin:center top;
+  animation:catGroomSwing 1s ease-in-out infinite, catPawVisible 18s linear infinite;
 }
-@keyframes catPawRub{
-  0%{transform:rotate(0deg) translateY(0);}
-  25%{transform:rotate(-38deg) translateY(-7px);}
-  50%{transform:rotate(0deg) translateY(0);}
-  75%{transform:rotate(-38deg) translateY(-7px);}
-  100%{transform:rotate(0deg) translateY(0);}
+@keyframes catGroomSwing{
+  0%{transform:rotate(-15deg);}
+  25%{transform:rotate(-150deg);}
+  50%{transform:rotate(-100deg);}
+  75%{transform:rotate(-150deg);}
+  100%{transform:rotate(-15deg);}
 }
 @keyframes catPawVisible{
   0%{opacity:0;} 31%{opacity:0;} 33%{opacity:1;}
