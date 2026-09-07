@@ -15,7 +15,7 @@ document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
 // pauses ~1s so it's readable, deletes letter by letter, then moves to
 // the next word. Loops forever.
 const typedWords = [
-  "Pratyay",
+  "Pratyay Pal",
   "a Frontend Developer",
   "a Backend Developer",
   "a Full Stack Web Developer",
