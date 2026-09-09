@@ -16,6 +16,7 @@ document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
 // the next word. Loops forever.
 const typedWords = [
   "Pratyay Pal",
+  "a Software Developer",
   "a Frontend Developer",
   "a Backend Developer",
   "a Full Stack Web Developer",
