@@ -504,30 +504,32 @@ Curious engineer focused on Data Structures, Algorithms, Object-Oriented Softwar
       case 'skills':
         appendTermOutput(`[TECH STACK]
 --------------------------------------------------
-Languages: Java, JavaScript (ES6+), Python, HTML5, CSS3
-Concepts:  Data Structures & Algorithms (100+ Solved), OOP, DBMS & SQL
-Tools:     Git, GitHub, VS Code, Browser DevTools
-Other:     Engineering Mathematics, Generative AI & Prompting`);
+Languages:  Java, JavaScript, Python, SQL, HTML, CSS
+Frameworks: Spring Boot, Spring Security, Hibernate, Thymeleaf
+Tools:      MySQL, Git, GitHub, VS Code, Maven
+Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBMS`);
         break;
 
       case 'projects':
-        appendTermOutput(`[FLAGSHIP BUILDS & SYSTEMS]
+        appendTermOutput(`[FLAGSHIP BUILDS]
 --------------------------------------------------
-1. PharmCare — Pharmacy ERP & POS Suite (Major Project)
-   - Real-time shop dashboard & low-stock action alerts
-   - Keyboard-accelerated cash memo POS billing (F1/F2/Ctrl+S)
-   - Inventory batch restock, rack mapping, & discrepancy audits
-   - Sales revenue analytics & 100% offline-ready PDF backups
-   - Multi-role staff access control (RBAC)
+1. ⚡ PharmCare — Full-Stack Pharmacy Management & POS System (Major Project)
+   - Stack: Java, Spring Boot, Spring Security, MySQL, Thymeleaf
+   - Multi-Item POS dispensing & patient cart with % and flat ₹ discounts
+   - Role-Based Access Control (RBAC) separating Owner & Cashier access
+   - Supplier restock inward delivery logs & inventory discrepancy audits
+   - Database backups & cloud recovery
+   - Live Demo: https://pratyaypal54-ops.github.io/pharmacy-app/
+   - GitHub:    https://github.com/pratyaypal54-ops/pharmacy-app
 
 2. Sorting Algorithm Visualizer (Interactive CS Suite)
-   - Step-by-step animation of 5 sorting algorithms
-   - Real-time telemetry: comparisons, swaps, Big-O analysis
-   - HTML5 Web Audio API procedural sound synthesis
+   - Real-time animation of 5 sorting algorithms
+   - Step-by-step visual array operations
+   - Live metrics: comparisons, swaps, Big-O analysis
 
 3. DSA CodeVault & Problem Tracker (Algorithms Engine)
    - 100+ solved algorithmic problems categorized by pattern
-   - Complexity HUD, Two Pointers, Trees, Graphs, DP
+   - Complexity breakdowns & pattern categorization
 
 4. Interactive Developer Portfolio & Terminal CLI
    - Custom developer platform with interactive UNIX shell emulator
