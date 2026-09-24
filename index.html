@@ -510,97 +510,322 @@
 
 <!-- PROJECTS -->
 <section id="projects" style="background:var(--bg-alt);">
-  <h2 class="sec-title">Featured <span>Projects</span></h2>
-  <p class="sec-sub">Interactive applications and algorithmic tools built from scratch to explore concepts under the hood.</p>
-
-  <div class="proj-wrap">
-
-    <!-- Primary Featured Project Card -->
-    <div class="proj-card" data-tilt>
-      <!-- Project Preview Frame showcasing actual UI -->
-      <div class="proj-preview-frame">
-        <div class="proj-preview-bar">
-          <div class="proj-window-dots">
-            <span class="p-dot red"></span>
-            <span class="p-dot yellow"></span>
-            <span class="p-dot green"></span>
-          </div>
-          <div class="proj-url-bar">
-            <i class='bx bx-lock-alt'></i>
-            <span>sorting-visualizer &bull; algorithm execution suite</span>
-          </div>
-          <div class="proj-actions">
-            <span class="proj-status-badge"><i class='bx bx-check-circle'></i> Featured Project</span>
-          </div>
-        </div>
-        <div class="proj-img-wrap">
-          <img src="sorting-visualizer.png" alt="Sorting Algorithm Visualizer UI Screenshot" class="proj-img">
-          <div class="proj-overlay">
-            <a href="https://github.com/pratyaypal54-ops/sorting-visualizer" target="_blank" rel="noopener" class="overlay-btn"><i class='bx bx-code-alt'></i> View Source on GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-body">
-        <div class="proj-meta-row">
-          <div>
-            <div class="yr">Featured Application &bull; 2025</div>
-            <h3>Sorting Algorithm Visualizer</h3>
-          </div>
-          <div class="pill-row" style="margin-bottom:0;">
-            <span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript (ES6+)</span><span class="pill">Web Audio API</span>
-          </div>
-        </div>
-        <ul>
-          <li>Built an interactive web app that animates 5 sorting algorithms in real time (Bubble, Selection, Insertion, Merge, Quick Sort) with step-by-step visual execution</li>
-          <li>Implemented custom array state generation (Random, Reversed, Nearly Sorted, Few Unique) and async/await playback controls with Pause, Step, and dynamic speed adjustment</li>
-          <li>Real-time telemetry and algorithmic analysis HUD tracking live comparisons, swaps/writes, elapsed execution time, and asymptotic Big-O space-time complexities</li>
-          <li>Procedural audio synthesis engine built with the HTML5 Web Audio API, generating dynamic frequency tones corresponding to bar heights during swaps and comparisons</li>
-        </ul>
-        <div class="proj-links" style="padding:0; margin-top:20px;">
-          <a href="https://github.com/pratyaypal54-ops/sorting-visualizer" target="_blank" rel="noopener" class="btn-primary-link"><i class='bx bx-git-repo-forked'></i> View Source Code</a>
-          <a href="https://github.com/pratyaypal54-ops/sorting-visualizer" target="_blank" rel="noopener"><i class='bx bx-link-external'></i> GitHub Repository</a>
-        </div>
-      </div>
+  <div class="projects-container">
+    <div class="projects-header-wrap">
+      <div class="eyebrow"><i class='bx bx-code-block'></i> Enterprise Applications &amp; Algorithmic Systems</div>
+      <h2 class="sec-title">Featured <span>Projects</span></h2>
+      <p class="sec-sub">Full-stack enterprise architectures, algorithmic execution engines, and interactive developer tools.</p>
     </div>
 
-    <!-- Secondary Projects Grid -->
-    <div class="secondary-projects">
-      <div class="mini-proj-card" data-tilt>
-        <div>
-          <div class="mini-proj-header">
-            <div class="icon"><i class='bx bx-data'></i></div>
-            <span class="pill" style="color:var(--accent-cyan);">In Active Build</span>
+    <!-- Projects Grid: 3 side-by-side per row on desktop; rows with fewer than 3 are automatically centered with symmetric margins -->
+    <div class="projects-grid" id="projects-grid">
+
+      <!-- ========================================================================= -->
+      <!-- PROJECT 1: PHARMCARE (MAJOR PROJECT - KEEP FIRST)                         -->
+      <!-- Features interactive 1-by-1 screenshot switcher, counter & zoom lightbox. -->
+      <!-- TO ADD MORE SCREENSHOTS LATER: Simply add more .carousel-slide items!     -->
+      <!-- ========================================================================= -->
+      <div class="proj-card major-project-card" data-tilt>
+        <!-- Project Preview Showcase Frame -->
+        <div class="proj-preview-frame">
+          <div class="proj-preview-bar">
+            <div class="proj-window-dots">
+              <span class="p-dot red"></span>
+              <span class="p-dot yellow"></span>
+              <span class="p-dot green"></span>
+            </div>
+            <div class="proj-url-bar" title="PharmCare ERP Suite">
+              <i class='bx bx-lock-alt'></i>
+              <span class="carousel-caption-text" id="pharmcare-screen-caption">Shop Dashboard &amp; Real-Time Metrics</span>
+            </div>
+            <div class="proj-actions">
+              <span class="proj-status-badge major-badge"><i class='bx bxs-star'></i> Major Project</span>
+            </div>
           </div>
-          <h4>DSA CodeVault &amp; Problem Tracker</h4>
-          <p>Curated solutions library and categorized progress tracker for 100+ LeetCode &amp; GeeksforGeeks algorithms, complete with space-time complexity analysis and pattern categorization.</p>
-          <div class="pill-row">
-            <span class="pill">Java</span><span class="pill">DSA</span><span class="pill">Algorithms</span>
+
+          <!-- Carousel Container for Swapping Pictures 1 by 1 -->
+          <div class="proj-carousel" data-carousel-id="pharmcare">
+            <div class="carousel-track">
+              <!-- Slide 1: Shop Dashboard -->
+              <div class="carousel-slide active" data-index="0" data-caption="Shop Dashboard &amp; Real-Time Metrics">
+                <img src="images/pharmcare/pharmcare-01-dashboard.png" alt="PharmCare Shop Dashboard" class="proj-img">
+              </div>
+              <!-- Slide 2: Billing Desk POS -->
+              <div class="carousel-slide" data-index="1" data-caption="Billing Desk &amp; Cash Memo (POS)">
+                <img src="images/pharmcare/pharmcare-02-billing.png" alt="PharmCare Billing Desk Cash Memo" class="proj-img">
+              </div>
+              <!-- Slide 3: Purchase & Restock -->
+              <div class="carousel-slide" data-index="2" data-caption="Purchase &amp; Supplier Stock Inward">
+                <img src="images/pharmcare/pharmcare-03-purchase.png" alt="PharmCare Purchase and Stock Inward" class="proj-img">
+              </div>
+              <!-- Slide 4: Medicine List -->
+              <div class="carousel-slide" data-index="3" data-caption="Medicine List &amp; Live Stock Search">
+                <img src="images/pharmcare/pharmcare-04-medicinelist.png" alt="PharmCare Medicine Search and Inventory" class="proj-img">
+              </div>
+              <!-- Slide 5: Stock Edit & Reconcile -->
+              <div class="carousel-slide" data-index="4" data-caption="Stock Audit &amp; Price Reconciliation">
+                <img src="images/pharmcare/pharmcare-05-stockedit.png" alt="PharmCare Stock Audit and Price Edit" class="proj-img">
+              </div>
+              <!-- Slide 6: Sales Reports -->
+              <div class="carousel-slide" data-index="5" data-caption="Sales Analytics &amp; Revenue Reports">
+                <img src="images/pharmcare/pharmcare-06-reports.png" alt="PharmCare Sales and Stock Reports" class="proj-img">
+              </div>
+              <!-- Slide 7: Offline PDF Backup -->
+              <div class="carousel-slide" data-index="6" data-caption="Audit-Ready PDF Backup &amp; Offline Export">
+                <img src="images/pharmcare/pharmcare-07-backup.png" alt="PharmCare PDF Backup Report" class="proj-img">
+              </div>
+              <!-- Slide 8: Staff RBAC -->
+              <div class="carousel-slide" data-index="7" data-caption="Staff Accounts &amp; Access Control (RBAC)">
+                <img src="images/pharmcare/pharmcare-08-staff.png" alt="PharmCare Staff Management and RBAC" class="proj-img">
+              </div>
+              <!-- [NOTE]: To add more screenshots, duplicate a .carousel-slide block above! -->
+            </div>
+
+            <!-- 1-by-1 Image Navigation Controls -->
+            <button class="carousel-nav-btn prev-btn" aria-label="Previous Screenshot" title="Previous Image (Left Arrow)">
+              <i class='bx bx-chevron-left'></i>
+            </button>
+            <button class="carousel-nav-btn next-btn" aria-label="Next Screenshot" title="Next Image (Right Arrow)">
+              <i class='bx bx-chevron-right'></i>
+            </button>
+
+            <!-- Slide Counter Badge -->
+            <div class="carousel-info-badge">
+              <span class="slide-num">1</span> / <span class="slide-total">8</span>
+            </div>
+
+            <!-- Fullscreen Lightbox Zoom Button -->
+            <button class="carousel-zoom-btn" title="Inspect Fullscreen Screenshot" aria-label="View Fullscreen High-Res Image">
+              <i class='bx bx-expand-alt'></i>
+            </button>
+
+            <!-- Bottom Pagination Dots -->
+            <div class="carousel-dots-container"></div>
           </div>
         </div>
-        <div class="proj-links" style="padding:0; margin-top:16px;">
-          <a href="https://github.com/pratyaypal54-ops" target="_blank" rel="noopener"><i class='bx bx-git-branch'></i> GitHub Repositories</a>
+
+        <!-- Project Details Body -->
+        <div class="proj-body">
+          <div class="proj-meta-row">
+            <div>
+              <div class="yr"><i class='bx bxs-badge-check'></i> Flagship Full-Stack System &bull; 2026</div>
+              <h3>PharmCare — Pharmacy ERP &amp; POS Suite</h3>
+            </div>
+            <div class="pill-row">
+              <span class="pill">Full-Stack</span>
+              <span class="pill">SQL Database</span>
+              <span class="pill">POS Terminal</span>
+              <span class="pill">Live Inventory</span>
+              <span class="pill">PDF Reports</span>
+              <span class="pill">RBAC Security</span>
+            </div>
+          </div>
+          <ul>
+            <li><strong>Live Inventory &amp; Telemetry:</strong> Real-time shop dashboard tracking registered medicines, automated low-stock warnings with action alerts, and instant profit calculations.</li>
+            <li><strong>High-Speed POS Billing:</strong> Keyboard-optimized cash memo terminal (F1/F2/Ins/Ctrl+S), live cart discount engine, and dual CGST/SGST tax breakdown.</li>
+            <li><strong>Supplier Inward &amp; Auditing:</strong> Procurement logging with batch IDs, expiry date verification, automated rack/shelf mapping, and loose tablet conversion.</li>
+            <li><strong>Reports &amp; PDF Backups:</strong> Sales analytics, profit margin tracking, 100% offline-compatible audit PDF compilation, and role-based staff access controls.</li>
+          </ul>
+          <div class="proj-links">
+            <button class="btn-primary-link open-gallery-btn" data-carousel-target="pharmcare">
+              <i class='bx bx-images'></i> Browse 8 Live Screens
+            </button>
+            <a href="#contact">
+              <i class='bx bx-send'></i> Inquire Details
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="mini-proj-card" data-tilt>
-        <div>
-          <div class="mini-proj-header">
-            <div class="icon"><i class='bx bx-terminal'></i></div>
-            <span class="pill" style="color:var(--accent-cyan);">Live Showcase</span>
+      <!-- ========================================================================= -->
+      <!-- PROJECT 2: SORTING ALGORITHM VISUALIZER                                   -->
+      <!-- ========================================================================= -->
+      <div class="proj-card" data-tilt>
+        <div class="proj-preview-frame">
+          <div class="proj-preview-bar">
+            <div class="proj-window-dots">
+              <span class="p-dot red"></span>
+              <span class="p-dot yellow"></span>
+              <span class="p-dot green"></span>
+            </div>
+            <div class="proj-url-bar" title="Sorting Visualizer">
+              <i class='bx bx-lock-alt'></i>
+              <span class="carousel-caption-text">sorting-visualizer &bull; algorithm execution</span>
+            </div>
+            <div class="proj-actions">
+              <span class="proj-status-badge"><i class='bx bx-check-circle'></i> Interactive CS App</span>
+            </div>
           </div>
-          <h4>Interactive Portfolio &amp; Developer CLI</h4>
-          <p>Custom developer portfolio designed from the ground up featuring Web Audio API sound synthesis, an integrated interactive terminal console, and an interactive particle physics background.</p>
-          <div class="pill-row">
-            <span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span>
+
+          <div class="proj-carousel" data-carousel-id="sorting-visualizer">
+            <div class="carousel-track">
+              <div class="carousel-slide active" data-index="0" data-caption="Sorting Algorithm Visualizer Execution Suite">
+                <img src="sorting-visualizer.png" alt="Sorting Algorithm Visualizer UI Screenshot" class="proj-img">
+              </div>
+            </div>
+            <button class="carousel-zoom-btn" title="Inspect Fullscreen Screenshot" aria-label="View Fullscreen">
+              <i class='bx bx-expand-alt'></i>
+            </button>
           </div>
         </div>
-        <div class="proj-links" style="padding:0; margin-top:16px;">
-          <a href="#top"><i class='bx bx-up-arrow-circle'></i> Explore Features</a>
+
+        <div class="proj-body">
+          <div class="proj-meta-row">
+            <div>
+              <div class="yr">Algorithmic Suite &bull; 2025</div>
+              <h3>Sorting Algorithm Visualizer</h3>
+            </div>
+            <div class="pill-row">
+              <span class="pill">HTML5</span>
+              <span class="pill">CSS3</span>
+              <span class="pill">JavaScript (ES6+)</span>
+              <span class="pill">Web Audio API</span>
+              <span class="pill">Algorithms</span>
+            </div>
+          </div>
+          <ul>
+            <li><strong>Real-Time Execution:</strong> Built an interactive web app that animates 5 sorting algorithms (Bubble, Selection, Insertion, Merge, Quick Sort) with step-by-step playback controls.</li>
+            <li><strong>State &amp; Speed Controls:</strong> Generates Random, Reversed, Nearly Sorted, and Few Unique array states with dynamic speed adjustments and pause/step inspection.</li>
+            <li><strong>Telemetry &amp; Big-O HUD:</strong> Real-time HUD tracking comparisons, swaps/writes, elapsed execution time, and asymptotic space-time complexities.</li>
+            <li><strong>Procedural Audio Synthesis:</strong> HTML5 Web Audio API engine generating dynamic frequency tones corresponding to bar heights during swaps.</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/pratyaypal54-ops/sorting-visualizer" target="_blank" rel="noopener" class="btn-primary-link">
+              <i class='bx bx-git-repo-forked'></i> View Source Code
+            </a>
+            <a href="https://github.com/pratyaypal54-ops/sorting-visualizer" target="_blank" rel="noopener">
+              <i class='bx bx-link-external'></i> GitHub Repo
+            </a>
+          </div>
         </div>
       </div>
+
+      <!-- ========================================================================= -->
+      <!-- PROJECT 3: DSA CODEVAULT & PROBLEM TRACKER                                -->
+      <!-- ========================================================================= -->
+      <div class="proj-card" data-tilt>
+        <div class="proj-preview-frame">
+          <div class="proj-preview-bar">
+            <div class="proj-window-dots">
+              <span class="p-dot red"></span>
+              <span class="p-dot yellow"></span>
+              <span class="p-dot green"></span>
+            </div>
+            <div class="proj-url-bar" title="DSA CodeVault">
+              <i class='bx bx-lock-alt'></i>
+              <span class="carousel-caption-text">dsa-codevault &bull; 100+ patterns solved</span>
+            </div>
+            <div class="proj-actions">
+              <span class="proj-status-badge"><i class='bx bx-code-curly'></i> DSA Hub</span>
+            </div>
+          </div>
+
+          <div class="proj-carousel" data-carousel-id="dsa-codevault">
+            <div class="carousel-track">
+              <div class="carousel-slide active" data-index="0" data-caption="DSA CodeVault &amp; Algorithm Problem Tracker">
+                <img src="images/dsa-codevault.jpg" alt="DSA CodeVault & Problem Tracker UI" class="proj-img">
+              </div>
+            </div>
+            <button class="carousel-zoom-btn" title="Inspect Fullscreen Screenshot" aria-label="View Fullscreen">
+              <i class='bx bx-expand-alt'></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="proj-body">
+          <div class="proj-meta-row">
+            <div>
+              <div class="yr">Data Structures &bull; Active Build</div>
+              <h3>DSA CodeVault &amp; Problem Tracker</h3>
+            </div>
+            <div class="pill-row">
+              <span class="pill">Java</span>
+              <span class="pill">DSA</span>
+              <span class="pill">LeetCode</span>
+              <span class="pill">GeeksforGeeks</span>
+              <span class="pill">Big-O HUD</span>
+            </div>
+          </div>
+          <ul>
+            <li><strong>100+ Solved Algorithmic Problems:</strong> Curated solutions archive across LeetCode and GeeksforGeeks categorized by pattern and data structure.</li>
+            <li><strong>Pattern-Based Categorization:</strong> Deep dives into Two Pointers, Sliding Window, Binary Trees, Graphs, and Dynamic Programming with edge-case tests.</li>
+            <li><strong>Space-Time Complexity Breakdowns:</strong> Asymptotic Big-O space-time complexity analysis and optimal alternative approaches documented for each pattern.</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/pratyaypal54-ops" target="_blank" rel="noopener" class="btn-primary-link">
+              <i class='bx bxl-github'></i> Explore Repositories
+            </a>
+            <a href="#education">
+              <i class='bx bx-bar-chart-alt-2'></i> View Stats
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- PROJECT 4: INTERACTIVE PORTFOLIO & DEVELOPER CLI                          -->
+      <!-- Displayed on row 2, automatically centered with symmetric side spacing!   -->
+      <!-- ========================================================================= -->
+      <div class="proj-card" data-tilt>
+        <div class="proj-preview-frame">
+          <div class="proj-preview-bar">
+            <div class="proj-window-dots">
+              <span class="p-dot red"></span>
+              <span class="p-dot yellow"></span>
+              <span class="p-dot green"></span>
+            </div>
+            <div class="proj-url-bar" title="Interactive Portfolio & CLI">
+              <i class='bx bx-lock-alt'></i>
+              <span class="carousel-caption-text">pratyaypal.dev &bull; interactive shell &amp; ui</span>
+            </div>
+            <div class="proj-actions">
+              <span class="proj-status-badge"><i class='bx bx-terminal'></i> Live Platform</span>
+            </div>
+          </div>
+
+          <div class="proj-carousel" data-carousel-id="portfolio-cli">
+            <div class="carousel-track">
+              <div class="carousel-slide active" data-index="0" data-caption="Interactive Developer Portfolio &amp; Terminal CLI">
+                <img src="images/portfolio-cli.jpg" alt="Interactive Portfolio & CLI Preview" class="proj-img">
+              </div>
+            </div>
+            <button class="carousel-zoom-btn" title="Inspect Fullscreen Screenshot" aria-label="View Fullscreen">
+              <i class='bx bx-expand-alt'></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="proj-body">
+          <div class="proj-meta-row">
+            <div>
+              <div class="yr">Developer Platform &bull; 2026</div>
+              <h3>Interactive Portfolio &amp; Developer CLI</h3>
+            </div>
+            <div class="pill-row">
+              <span class="pill">HTML5</span>
+              <span class="pill">CSS3</span>
+              <span class="pill">Vanilla JS</span>
+              <span class="pill">Web Audio API</span>
+              <span class="pill">Canvas Physics</span>
+            </div>
+          </div>
+          <ul>
+            <li><strong>Embedded Terminal Console:</strong> Full UNIX-style interactive CLI emulator with custom commands (skills, projects, stats, cat sound effects, matrix mode).</li>
+            <li><strong>Procedural Audio &amp; Physics:</strong> Web Audio API click/typing sound synthesis and interactive canvas particle network with responsive mouse physics.</li>
+            <li><strong>Glassmorphic Responsive Design:</strong> Custom design system with 3D perspective card tilting, smooth scroll telemetry, and zero third-party framework dependencies.</li>
+          </ul>
+          <div class="proj-links">
+            <a href="#top" class="btn-primary-link">
+              <i class='bx bx-up-arrow-circle'></i> Explore Platform
+            </a>
+            <a href="#overview">
+              <i class='bx bx-terminal'></i> Try CLI Terminal
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
-
   </div>
 </section>
 
@@ -768,6 +993,36 @@
 <div id="toast" class="toast">
   <i class='bx bx-check-circle'></i>
   <span id="toast-text">Notification</span>
+</div>
+
+<!-- ========================================================================= -->
+<!-- HIGH-RESOLUTION PROJECT SCREENSHOTS LIGHTBOX MODAL                        -->
+<!-- Enables viewing uncropped, crystal-clear screenshots with 1-by-1 swapping -->
+<!-- ========================================================================= -->
+<div id="project-lightbox" class="proj-lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+  <div class="lightbox-dialog">
+    <div class="lightbox-header">
+      <div class="lightbox-info">
+        <h4 id="lightbox-title" class="lightbox-title">PharmCare Screenshot</h4>
+        <span id="lightbox-caption" class="lightbox-caption">Shop Dashboard &amp; Real-Time Metrics</span>
+      </div>
+      <div class="lightbox-controls">
+        <span id="lightbox-counter" class="lightbox-counter">1 / 8</span>
+        <button id="lightbox-close" class="lightbox-close-btn" aria-label="Close Preview" title="Close (Esc)"><i class='bx bx-x'></i></button>
+      </div>
+    </div>
+    <div class="lightbox-media-wrap">
+      <button id="lightbox-prev" class="lightbox-arrow prev" aria-label="Previous Screenshot" title="Previous (Left Arrow)"><i class='bx bx-chevron-left'></i></button>
+      <div class="lightbox-image-box">
+        <img id="lightbox-img" src="" alt="Full resolution screenshot preview" class="lightbox-img">
+      </div>
+      <button id="lightbox-next" class="lightbox-arrow next" aria-label="Next Screenshot" title="Next (Right Arrow)"><i class='bx bx-chevron-right'></i></button>
+    </div>
+    <div class="lightbox-footer">
+      <div id="lightbox-thumbnails" class="lightbox-thumbs-strip"></div>
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER -->

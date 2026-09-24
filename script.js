@@ -511,16 +511,27 @@ Other:     Engineering Mathematics, Generative AI & Prompting`);
         break;
 
       case 'projects':
-        appendTermOutput(`[FEATURED BUILDS]
+        appendTermOutput(`[FLAGSHIP BUILDS & SYSTEMS]
 --------------------------------------------------
-1. Sorting Algorithm Visualizer (Live Interactive App)
-   - Real-time step-by-step animation of 5 sorting algorithms
-   - Step-by-step visual array operations
-   - Live metrics: comparisons, swaps, Big-O analysis
+1. PharmCare — Pharmacy ERP & POS Suite (Major Project)
+   - Real-time shop dashboard & low-stock action alerts
+   - Keyboard-accelerated cash memo POS billing (F1/F2/Ctrl+S)
+   - Inventory batch restock, rack mapping, & discrepancy audits
+   - Sales revenue analytics & 100% offline-ready PDF backups
+   - Multi-role staff access control (RBAC)
 
-2. DSA CodeVault & Problem Tracker (In Progress)
+2. Sorting Algorithm Visualizer (Interactive CS Suite)
+   - Step-by-step animation of 5 sorting algorithms
+   - Real-time telemetry: comparisons, swaps, Big-O analysis
+   - HTML5 Web Audio API procedural sound synthesis
+
+3. DSA CodeVault & Problem Tracker (Algorithms Engine)
    - 100+ solved algorithmic problems categorized by pattern
-   - Complexity breakdowns and optimal solutions`);
+   - Complexity HUD, Two Pointers, Trees, Graphs, DP
+
+4. Interactive Developer Portfolio & Terminal CLI
+   - Custom developer platform with interactive UNIX shell emulator
+   - Web Audio synthesizer & responsive particle physics canvas`);
         break;
 
       case 'stats':
@@ -882,6 +893,238 @@ Email has been copied to your clipboard. Redirecting to contact section...`, 'su
 
 
   /* ==========================================================================
+     13. PROJECT IMAGE CAROUSELS & FULLSCREEN LIGHTBOX
+     ========================================================================== */
+  const lightboxModal = document.getElementById('project-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  const lightboxThumbs = document.getElementById('lightbox-thumbnails');
+  const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+
+  let activeLightboxSlides = [];
+  let currentLightboxIndex = 0;
+  let activeLightboxProjectTitle = '';
+
+  function openLightbox(slides, startIndex, projectTitle) {
+    if (!lightboxModal || !slides || slides.length === 0) return;
+    activeLightboxSlides = slides;
+    currentLightboxIndex = startIndex || 0;
+    activeLightboxProjectTitle = projectTitle || 'Project Preview';
+
+    updateLightboxUI();
+    lightboxModal.classList.add('active');
+    lightboxModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove('active');
+    lightboxModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightboxUI() {
+    if (activeLightboxSlides.length === 0) return;
+    const currentSlide = activeLightboxSlides[currentLightboxIndex];
+    if (!currentSlide) return;
+
+    if (lightboxImg) {
+      lightboxImg.style.opacity = '0';
+      setTimeout(() => {
+        lightboxImg.src = currentSlide.src;
+        lightboxImg.alt = currentSlide.caption || 'Project screenshot';
+        lightboxImg.style.opacity = '1';
+      }, 80);
+    }
+
+    if (lightboxTitle) lightboxTitle.textContent = activeLightboxProjectTitle;
+    if (lightboxCaption) lightboxCaption.textContent = currentSlide.caption || '';
+    if (lightboxCounter) lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${activeLightboxSlides.length}`;
+
+    // Render / update thumbnails
+    if (lightboxThumbs) {
+      if (activeLightboxSlides.length > 1) {
+        lightboxThumbs.style.display = 'flex';
+        lightboxThumbs.innerHTML = '';
+        activeLightboxSlides.forEach((slide, idx) => {
+          const thumb = document.createElement('div');
+          thumb.className = `lightbox-thumb ${idx === currentLightboxIndex ? 'active' : ''}`;
+          thumb.innerHTML = `<img src="${slide.src}" alt="${slide.caption || 'thumb'}">`;
+          thumb.addEventListener('click', () => {
+            currentLightboxIndex = idx;
+            updateLightboxUI();
+          });
+          lightboxThumbs.appendChild(thumb);
+        });
+      } else {
+        lightboxThumbs.style.display = 'none';
+      }
+    }
+
+    if (lightboxPrev && lightboxNext) {
+      lightboxPrev.style.display = activeLightboxSlides.length > 1 ? 'flex' : 'none';
+      lightboxNext.style.display = activeLightboxSlides.length > 1 ? 'flex' : 'none';
+    }
+  }
+
+  function stepLightbox(dir) {
+    if (activeLightboxSlides.length <= 1) return;
+    currentLightboxIndex = (currentLightboxIndex + dir + activeLightboxSlides.length) % activeLightboxSlides.length;
+    updateLightboxUI();
+  }
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', () => stepLightbox(-1));
+  if (lightboxNext) lightboxNext.addEventListener('click', () => stepLightbox(1));
+
+  window.addEventListener('keydown', (e) => {
+    if (lightboxModal && lightboxModal.classList.contains('active')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') stepLightbox(-1);
+      if (e.key === 'ArrowRight') stepLightbox(1);
+    }
+  });
+
+  // Initialize all project carousels dynamically
+  const projectCarousels = document.querySelectorAll('.proj-carousel');
+  projectCarousels.forEach(carousel => {
+    const card = carousel.closest('.proj-card');
+    const projectTitle = card ? (card.querySelector('h3')?.textContent || 'Project') : 'Project';
+    const captionDisplay = card ? card.querySelector('.carousel-caption-text') : null;
+    const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    const prevBtn = carousel.querySelector('.carousel-nav-btn.prev-btn');
+    const nextBtn = carousel.querySelector('.carousel-nav-btn.next-btn');
+    const counterBadge = carousel.querySelector('.carousel-info-badge');
+    const slideNum = carousel.querySelector('.slide-num');
+    const slideTotal = carousel.querySelector('.slide-total');
+    const dotsContainer = carousel.querySelector('.carousel-dots-container');
+    const zoomBtn = carousel.querySelector('.carousel-zoom-btn');
+
+    const slideData = slides.map((slide, idx) => {
+      const img = slide.querySelector('img');
+      return {
+        index: idx,
+        src: img ? img.getAttribute('src') : '',
+        caption: slide.getAttribute('data-caption') || img?.getAttribute('alt') || `Screenshot ${idx + 1}`
+      };
+    });
+
+    let activeIndex = 0;
+
+    function goToSlide(newIndex) {
+      if (slides.length === 0) return;
+      activeIndex = (newIndex + slides.length) % slides.length;
+
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === activeIndex);
+      });
+
+      if (slideNum) slideNum.textContent = activeIndex + 1;
+      if (captionDisplay && slideData[activeIndex]) {
+        captionDisplay.textContent = slideData[activeIndex].caption;
+      }
+
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === activeIndex);
+        });
+      }
+    }
+
+    if (slides.length > 1) {
+      if (slideTotal) slideTotal.textContent = slides.length;
+      if (slideNum) slideNum.textContent = 1;
+
+      // Build pagination dots
+      if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, idx) => {
+          const dot = document.createElement('button');
+          dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+          dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+          dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide(idx);
+          });
+          dotsContainer.appendChild(dot);
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          goToSlide(activeIndex - 1);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          goToSlide(activeIndex + 1);
+        });
+      }
+
+      // Touch swipe support
+      let touchStartX = 0;
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      carousel.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 40) {
+          if (diff < 0) goToSlide(activeIndex + 1);
+          else goToSlide(activeIndex - 1);
+        }
+      }, { passive: true });
+
+    } else {
+      // Single slide: hide navigation buttons and dots
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+      if (counterBadge) counterBadge.style.display = 'none';
+      if (dotsContainer) dotsContainer.style.display = 'none';
+    }
+
+    // Zoom button opens lightbox
+    if (zoomBtn) {
+      zoomBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openLightbox(slideData, activeIndex, projectTitle);
+      });
+    }
+
+    // Allow clicking on slide to zoom
+    slides.forEach((slide, idx) => {
+      slide.style.cursor = 'zoom-in';
+      slide.addEventListener('click', (e) => {
+        if (e.target.closest('.carousel-nav-btn') || e.target.closest('.carousel-dot') || e.target.closest('.carousel-zoom-btn')) return;
+        openLightbox(slideData, idx, projectTitle);
+      });
+    });
+
+    // Handle "Browse Screens" buttons if present in card
+    if (card) {
+      const browseBtns = card.querySelectorAll('.open-gallery-btn');
+      browseBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openLightbox(slideData, activeIndex, projectTitle);
+        });
+      });
+    }
+  });
+
+
+  /* ==========================================================================
      14. CUSTOM CURSOR INTERPOLATION (DESKTOP)
      ========================================================================== */
   const cursorDot = document.getElementById('cursor-dot');
@@ -909,7 +1152,7 @@ Email has been copied to your clipboard. Redirecting to contact section...`, 'su
     }
     renderCursor();
 
-    const interactiveTargets = document.querySelectorAll('a, button, input, select, textarea, .stat-card, .skill-card, .act-card, .cat-track, .term-tag');
+    const interactiveTargets = document.querySelectorAll('a, button, input, select, textarea, .stat-card, .skill-card, .act-card, .cat-track, .term-tag, .proj-card, .carousel-nav-btn, .carousel-zoom-btn, .carousel-dot, .lightbox-arrow, .lightbox-close-btn, .lightbox-thumb');
     interactiveTargets.forEach(el => {
       el.addEventListener('mouseenter', () => cursorRing.classList.add('active'));
       el.addEventListener('mouseleave', () => cursorRing.classList.remove('active'));
