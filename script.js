@@ -484,6 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <strong style="color:var(--accent-light);">about</strong>     - View summary bio & engineering profile
   <strong style="color:var(--accent-light);">skills</strong>    - View technical languages, frameworks & concepts
   <strong style="color:var(--accent-light);">projects</strong>  - View featured software engineering projects
+  <strong style="color:var(--accent-light);">certs</strong>     - View verified HackerRank certifications & workshops
   <strong style="color:var(--accent-light);">stats</strong>     - View LeetCode solved count & academic record
   <strong style="color:var(--accent-light);">cat</strong>       - ASCII cat easter egg & cheerful meow
   <strong style="color:var(--accent-light);">matrix</strong>    - Launch green matrix digital rain mode
@@ -534,6 +535,27 @@ Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBM
 4. Interactive Developer Portfolio & Terminal CLI
    - Custom developer platform with interactive UNIX shell emulator
    - Web Audio synthesizer & responsive particle physics canvas`);
+        break;
+
+      case 'certs':
+      case 'certifications':
+      case 'activities':
+        appendTermOutput(`[ACTIVITIES & CERTIFICATIONS]
+--------------------------------------------------
+1. 🏆 Frontend Developer (React) — HackerRank Role Certification
+   - Verified: Passed HackerRank Role Certification Test
+   - Earned:   02 Oct, 2026 | ID: A7A43B4B1F26
+   - Verify:   https://www.hackerrank.com/certificates/a7a43b4b1f26
+
+2. ☕ Java (Basic) — HackerRank Skill Certification
+   - Verified: Passed HackerRank Skill Certification Test
+   - Earned:   02 Oct, 2026 | ID: 52449971B9D1
+   - Verify:   https://www.hackerrank.com/certificates/52449971b9d1
+
+3. 🤖 AI for Entrepreneurship — Intel Technology India & Skill India Hub
+4. 🐍 Software Programmer (Python) — SSC NASSCOM Competency
+5. 📘 AI Awareness & Foundation — RCCIIT Future Workforce
+6. ☁️ Python Cloud Skills Challenge — MLSA & NoobCode`);
         break;
 
       case 'stats':
@@ -1154,7 +1176,24 @@ Email has been copied to your clipboard. Redirecting to contact section...`, 'su
     }
     renderCursor();
 
-    const interactiveTargets = document.querySelectorAll('a, button, input, select, textarea, .stat-card, .skill-card, .act-card, .cat-track, .term-tag, .proj-card, .carousel-nav-btn, .carousel-zoom-btn, .carousel-dot, .lightbox-arrow, .lightbox-close-btn, .lightbox-thumb');
+    // Certificate High-Resolution Lightbox inspection
+    document.querySelectorAll('.cert-preview-frame').forEach(frame => {
+      frame.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const img = frame.querySelector('img');
+        const title = frame.getAttribute('data-cert-title') || 'Certificate of Accomplishment';
+        const caption = frame.getAttribute('data-cert-caption') || '';
+        if (img) {
+          openLightbox([{
+            index: 0,
+            src: img.getAttribute('src'),
+            caption: caption
+          }], 0, title);
+        }
+      });
+    });
+
+    const interactiveTargets = document.querySelectorAll('a, button, input, select, textarea, .stat-card, .skill-card, .act-card, .cert-preview-frame, .btn-cert, .cat-track, .term-tag, .proj-card, .carousel-nav-btn, .carousel-zoom-btn, .carousel-dot, .lightbox-arrow, .lightbox-close-btn, .lightbox-thumb');
     interactiveTargets.forEach(el => {
       el.addEventListener('mouseenter', () => cursorRing.classList.add('active'));
       el.addEventListener('mouseleave', () => cursorRing.classList.remove('active'));
