@@ -552,10 +552,20 @@ Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBM
    - Earned:   02 Oct, 2026 | ID: 52449971B9D1
    - Verify:   https://www.hackerrank.com/certificates/52449971b9d1
 
-3. 🤖 AI for Entrepreneurship — Intel Technology India & Skill India Hub
-4. 🐍 Software Programmer (Python) — SSC NASSCOM Competency
-5. 📘 AI Awareness & Foundation — RCCIIT Future Workforce
-6. ☁️ Python Cloud Skills Challenge — MLSA & NoobCode`);
+3. ⚡ Problem Solving (Intermediate) — HackerRank Skill Certification
+   - Verified: Passed HackerRank Skill Certification Test
+   - Earned:   06 Oct, 2026 | ID: 7A2A9C267692
+   - Verify:   https://www.hackerrank.com/certificates/7a2a9c267692
+
+4. 🧩 Problem Solving (Basic) — HackerRank Skill Certification
+   - Verified: Passed HackerRank Skill Certification Test
+   - Earned:   06 Oct, 2026 | ID: EB212074E1B3
+   - Verify:   https://www.hackerrank.com/certificates/eb212074e1b3
+
+5. 🤖 AI for Entrepreneurship — Intel Technology India & Skill India Hub
+6. 🐍 Software Programmer (Python) — SSC NASSCOM Competency
+7. 📘 AI Awareness & Foundation — RCCIIT Future Workforce
+8. ☁️ Python Cloud Skills Challenge — MLSA & NoobCode`);
         break;
 
       case 'stats':
