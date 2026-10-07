@@ -1186,28 +1186,28 @@ Email has been copied to your clipboard. Redirecting to contact section...`, 'su
     }
     renderCursor();
 
-    // Certificate High-Resolution Lightbox inspection
-    document.querySelectorAll('.cert-preview-frame').forEach(frame => {
-      frame.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const img = frame.querySelector('img');
-        const title = frame.getAttribute('data-cert-title') || 'Certificate of Accomplishment';
-        const caption = frame.getAttribute('data-cert-caption') || '';
-        if (img) {
-          openLightbox([{
-            index: 0,
-            src: img.getAttribute('src'),
-            caption: caption
-          }], 0, title);
-        }
-      });
-    });
-
     const interactiveTargets = document.querySelectorAll('a, button, input, select, textarea, .stat-card, .skill-card, .act-card, .cert-preview-frame, .btn-cert, .cat-track, .term-tag, .proj-card, .carousel-nav-btn, .carousel-zoom-btn, .carousel-dot, .lightbox-arrow, .lightbox-close-btn, .lightbox-thumb');
     interactiveTargets.forEach(el => {
       el.addEventListener('mouseenter', () => cursorRing.classList.add('active'));
       el.addEventListener('mouseleave', () => cursorRing.classList.remove('active'));
     });
   }
+
+  // Certificate High-Resolution Lightbox inspection (Universal for Desktop & Mobile)
+  document.querySelectorAll('.cert-preview-frame').forEach(frame => {
+    frame.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const img = frame.querySelector('img');
+      const title = frame.getAttribute('data-cert-title') || 'Certificate of Accomplishment';
+      const caption = frame.getAttribute('data-cert-caption') || '';
+      if (img) {
+        openLightbox([{
+          index: 0,
+          src: img.getAttribute('src'),
+          caption: caption
+        }], 0, title);
+      }
+    });
+  });
 
 });
