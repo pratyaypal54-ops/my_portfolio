@@ -512,7 +512,7 @@ Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBM
         break;
 
       case 'projects':
-        appendTermOutput(`[FLAGSHIP BUILDS]
+        appendTermOutput(`[FLAGSHIP BUILDS & INTERNSHIP PROJECTS]
 --------------------------------------------------
 1. ⚡ PharmCare — Full-Stack Pharmacy Management & POS System (Major Project)
    - Stack: Java, Spring Boot, Spring Security, MySQL, Thymeleaf
@@ -520,19 +520,28 @@ Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBM
    - Role-Based Access Control (RBAC) separating Owner & Cashier access
    - Supplier restock inward delivery logs & inventory discrepancy audits
    - Database backups & cloud recovery
-   - Live Demo: https://pratyaypal54-ops.github.io/pharmacy-app/
    - GitHub:    https://github.com/pratyaypal54-ops/pharmacy-app
+   - Live Demo: https://pratyaypal54-ops.github.io/pharmacy-app/
 
-2. Sorting Algorithm Visualizer (Interactive CS Suite)
+2. 🛒 TechStore — Full-Stack Electronics & Gadgets Store (CodeAlpha Internship)
+   - Stack: Node.js, Express, SQLite, JavaScript (ES6+), HTML5, CSS3, JWT
+   - Real-time search, multi-category filters & interactive price slider
+   - Slide-out cart drawer with live coupon verification (TECH15)
+   - Multi-step checkout pipeline with simulated card/UPI/COD payment
+   - Live order tracking timeline by ID & persistent user accounts
+   - Live Demo: https://pratyaypal54-ops.github.io/CodeAlpha_EcommerceStore/
+   - GitHub:    https://github.com/pratyaypal54-ops/CodeAlpha_EcommerceStore
+
+3. Sorting Algorithm Visualizer (Interactive CS Suite)
    - Real-time animation of 5 sorting algorithms
    - Step-by-step visual array operations
    - Live metrics: comparisons, swaps, Big-O analysis
 
-3. DSA CodeVault & Problem Tracker (Algorithms Engine)
+4. DSA CodeVault & Problem Tracker (Algorithms Engine)
    - 100+ solved algorithmic problems categorized by pattern
    - Complexity breakdowns & pattern categorization
 
-4. Interactive Developer Portfolio & Terminal CLI
+5. Interactive Developer Portfolio & Terminal CLI
    - Custom developer platform with interactive UNIX shell emulator
    - Web Audio synthesizer & responsive particle physics canvas`);
         break;

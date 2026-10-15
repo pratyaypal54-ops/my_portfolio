@@ -482,6 +482,7 @@
       <div class="skill-card" data-tilt><div class="ico"><i class='bx bx-shield-quarter'></i></div><div class="name">Spring Security</div></div>
       <div class="skill-card" data-tilt><div class="ico"><i class='bx bx-data'></i></div><div class="name">Hibernate</div></div>
       <div class="skill-card" data-tilt><div class="ico"><i class='bx bx-code-alt'></i></div><div class="name">Thymeleaf</div></div>
+      <div class="skill-card" data-tilt><div class="ico"><i class='bx bxl-nodejs'></i></div><div class="name">Node.js &amp; Express</div></div>
     </div>
   </div>
 
@@ -491,6 +492,7 @@
     <p class="sub">Software, databases, and version control tools I use</p>
     <div class="skill-cards">
       <div class="skill-card" data-tilt><div class="ico"><i class='bx bxs-data'></i></div><div class="name">MySQL</div></div>
+      <div class="skill-card" data-tilt><div class="ico"><i class='bx bx-data'></i></div><div class="name">SQLite</div></div>
       <div class="skill-card" data-tilt><div class="ico"><i class='bx bxl-git'></i></div><div class="name">Git</div></div>
       <div class="skill-card" data-tilt><div class="ico"><i class='bx bxl-github'></i></div><div class="name">GitHub</div></div>
       <div class="skill-card" data-tilt><div class="ico"><i class='bx bxl-visual-studio'></i></div><div class="name">VS Code</div></div>
@@ -637,11 +639,11 @@
             <li><strong>Inventory Auditing &amp; Backups:</strong> Mistake correction logs with mandatory reasons, visit-grouped customer transaction records, 1-click database backups, and automated cloud sync protection.</li>
           </ul>
           <div class="proj-links">
-            <a href="https://pratyaypal54-ops.github.io/pharmacy-app/" target="_blank" rel="noopener" class="btn-primary-link">
-              <i class='bx bx-rocket'></i> Live Demo
-            </a>
-            <a href="https://github.com/pratyaypal54-ops/pharmacy-app" target="_blank" rel="noopener">
+            <a href="https://github.com/pratyaypal54-ops/pharmacy-app" target="_blank" rel="noopener" class="btn-primary-link">
               <i class='bx bxl-github'></i> GitHub Repo
+            </a>
+            <a href="https://pratyaypal54-ops.github.io/pharmacy-app/" target="_blank" rel="noopener">
+              <i class='bx bx-rocket'></i> Live Demo
             </a>
             <button class="open-gallery-btn" data-carousel-target="pharmcare">
               <i class='bx bx-images'></i> 8 UI Screens
@@ -651,7 +653,102 @@
       </div>
 
       <!-- ========================================================================= -->
-      <!-- PROJECT 2: SORTING ALGORITHM VISUALIZER                                   -->
+      <!-- PROJECT 2: TECHSTORE E-COMMERCE PLATFORM (CODEALPHA INTERNSHIP)           -->
+      <!-- Features multi-picture carousel, filters, price slider & live cart suite  -->
+      <!-- ========================================================================= -->
+      <div class="proj-card" data-tilt>
+        <!-- Project Preview Showcase Frame -->
+        <div class="proj-preview-frame">
+          <div class="proj-preview-bar">
+            <div class="proj-window-dots">
+              <span class="p-dot red"></span>
+              <span class="p-dot yellow"></span>
+              <span class="p-dot green"></span>
+            </div>
+            <div class="proj-url-bar" title="TechStore E-Commerce Platform">
+              <i class='bx bx-lock-alt'></i>
+              <span class="carousel-caption-text" id="techstore-screen-caption">Storefront Showcase &amp; Audio Gear</span>
+            </div>
+            <div class="proj-actions">
+              <span class="proj-status-badge internship-badge"><i class='bx bx-briefcase-alt-2'></i> Internship Project</span>
+            </div>
+          </div>
+
+          <!-- Carousel Container for Swapping Pictures 1 by 1 -->
+          <div class="proj-carousel" data-carousel-id="techstore">
+            <div class="carousel-track">
+              <!-- Slide 1: Storefront Hero Showcase -->
+              <div class="carousel-slide active" data-index="0" data-caption="Storefront Hero Showcase &amp; Featured Audio Gear">
+                <img src="images/techstore/techstore-01-hero.png" alt="TechStore Storefront Hero Showcase" class="proj-img">
+              </div>
+              <!-- Slide 2: Product Catalog & Filter Suite -->
+              <div class="carousel-slide" data-index="1" data-caption="Live Product Catalog, Price Slider &amp; Filter Suite">
+                <img src="images/techstore/techstore-02-catalog.png" alt="TechStore Product Catalog and Filters" class="proj-img">
+              </div>
+            </div>
+
+            <!-- 1-by-1 Image Navigation Controls -->
+            <button class="carousel-nav-btn prev-btn" aria-label="Previous Screenshot" title="Previous Image (Left Arrow)">
+              <i class='bx bx-chevron-left'></i>
+            </button>
+            <button class="carousel-nav-btn next-btn" aria-label="Next Screenshot" title="Next Image (Right Arrow)">
+              <i class='bx bx-chevron-right'></i>
+            </button>
+
+            <!-- Slide Counter Badge -->
+            <div class="carousel-info-badge">
+              <span class="slide-num">1</span> / <span class="slide-total">2</span>
+            </div>
+
+            <!-- Fullscreen Lightbox Zoom Button -->
+            <button class="carousel-zoom-btn" title="Inspect Fullscreen Screenshot" aria-label="View Fullscreen High-Res Image">
+              <i class='bx bx-expand-alt'></i>
+            </button>
+
+            <!-- Bottom Pagination Dots -->
+            <div class="carousel-dots-container"></div>
+          </div>
+        </div>
+
+        <!-- Project Details Body -->
+        <div class="proj-body">
+          <div class="proj-meta-row">
+            <div>
+              <div class="yr"><i class='bx bx-briefcase-alt-2'></i> CodeAlpha Internship &bull; Full-Stack E-Commerce</div>
+              <h3>⚡ TechStore — Modern Electronics &amp; Gadgets Store</h3>
+            </div>
+            <div class="pill-row">
+              <span class="pill">Node.js</span>
+              <span class="pill">Express</span>
+              <span class="pill">SQLite</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">REST API</span>
+              <span class="pill">JWT Auth</span>
+              <span class="pill">E-Commerce Cart</span>
+            </div>
+          </div>
+          <ul>
+            <li><strong>Dynamic Catalog &amp; Multi-Faceted Filters:</strong> Real-time keyword search across 17+ electronic products, category tabs (Audio, Wearables, Monitors, TVs, Consoles), interactive price range slider (₹1,000–₹2,00,000), and in-stock toggles.</li>
+            <li><strong>Interactive Cart &amp; Promotional Engine:</strong> Slide-out cart drawer with live quantity adjustments, discount coupon verification (<code>TECH15</code> for 15% off), dynamic free shipping milestone tracker (orders over ₹499), and GST calculation.</li>
+            <li><strong>Multi-Step Checkout &amp; Payment Simulation:</strong> Streamlined 3-step checkout pipeline (Shipping &rarr; Payment &rarr; Review) supporting simulated Credit/Debit cards, UPI, and Cash on Delivery with printable receipt generation.</li>
+            <li><strong>Live Order Tracking &amp; User Accounts:</strong> Order status lifecycle engine (Pending &rarr; Processing &rarr; Shipped &rarr; Delivered) searchable by tracking ID, backed by JWT-authenticated user registration and persistent SQLite storage.</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://pratyaypal54-ops.github.io/CodeAlpha_EcommerceStore/" target="_blank" rel="noopener" class="btn-primary-link">
+              <i class='bx bx-rocket'></i> Live Demo
+            </a>
+            <a href="https://github.com/pratyaypal54-ops/CodeAlpha_EcommerceStore" target="_blank" rel="noopener">
+              <i class='bx bxl-github'></i> GitHub Repo
+            </a>
+            <button class="open-gallery-btn" data-carousel-target="techstore">
+              <i class='bx bx-images'></i> 2 UI Screens
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- PROJECT 3: SORTING ALGORITHM VISUALIZER                                   -->
       <!-- ========================================================================= -->
       <div class="proj-card" data-tilt>
         <div class="proj-preview-frame">
@@ -714,7 +811,7 @@
       </div>
 
       <!-- ========================================================================= -->
-      <!-- PROJECT 3: DSA CODEVAULT & PROBLEM TRACKER                                -->
+      <!-- PROJECT 4: DSA CODEVAULT & PROBLEM TRACKER                                -->
       <!-- ========================================================================= -->
       <div class="proj-card" data-tilt>
         <div class="proj-preview-frame">
@@ -776,7 +873,7 @@
       </div>
 
       <!-- ========================================================================= -->
-      <!-- PROJECT 4: INTERACTIVE PORTFOLIO & DEVELOPER CLI                          -->
+      <!-- PROJECT 5: INTERACTIVE PORTFOLIO & DEVELOPER CLI                          -->
       <!-- Displayed on row 2, automatically centered with symmetric side spacing!   -->
       <!-- ========================================================================= -->
       <div class="proj-card" data-tilt>

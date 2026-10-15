@@ -1306,6 +1306,12 @@ nav ul a:hover::after, nav ul a.active::after{width: 100%;}
   color: #34d399;
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.25);
 }
+.proj-status-badge.internship-badge{
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(59, 130, 246, 0.22));
+  border-color: rgba(192, 132, 252, 0.5);
+  color: #c084fc;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.25);
+}
 
 /* ---------- MULTI-PICTURE CAROUSEL & CROPPING ---------- */
 .proj-carousel{
