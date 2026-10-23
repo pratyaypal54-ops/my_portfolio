@@ -507,7 +507,7 @@ Curious engineer focused on Data Structures, Algorithms, Object-Oriented Softwar
 --------------------------------------------------
 Languages:  Java, JavaScript, Python, SQL, HTML, CSS
 Frameworks: Spring Boot, Spring Security, Hibernate, Thymeleaf
-Tools:      MySQL, Git, GitHub, VS Code, Maven
+Tools:      MySQL, Git, GitHub, VS Code, IntelliJ IDEA, Maven
 Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBMS`);
         break;
 
@@ -532,16 +532,21 @@ Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBM
    - Live Demo: https://pratyaypal54-ops.github.io/CodeAlpha_EcommerceStore/
    - GitHub:    https://github.com/pratyaypal54-ops/CodeAlpha_EcommerceStore
 
-3. Sorting Algorithm Visualizer (Interactive CS Suite)
+3. 🌿 greenit — Full-Stack Social Networking Platform (CodeAlpha Internship)
+   - Stack: Node.js, Express, SQLite3, JavaScript (ES6+), HTML5, CSS3, REST API
+   - Interactive feeds ("For You", "Following", "Saved"), post composer & media
+   - Social graph: follow/unfollow engine, instant heart likes, inline comment threads
+   - Rich profiles: cover banner, avatar, live follower/post stats, bio editor
+   - Search & discovery: live search, trending topics widget, notifications drawer
+   - Live Demo: https://pratyaypal54-ops.github.io/CodeAlpha_SocialMediaPlatform/
+   - GitHub:    https://github.com/pratyaypal54-ops/CodeAlpha_SocialMediaPlatform
+
+4. 📊 Sorting Algorithm Visualizer (Interactive CS Suite)
    - Real-time animation of 5 sorting algorithms
    - Step-by-step visual array operations
    - Live metrics: comparisons, swaps, Big-O analysis
 
-4. DSA CodeVault & Problem Tracker (Algorithms Engine)
-   - 100+ solved algorithmic problems categorized by pattern
-   - Complexity breakdowns & pattern categorization
-
-5. Interactive Developer Portfolio & Terminal CLI
+5. 💻 Interactive Developer Portfolio & Terminal CLI
    - Custom developer platform with interactive UNIX shell emulator
    - Web Audio synthesizer & responsive particle physics canvas`);
         break;
