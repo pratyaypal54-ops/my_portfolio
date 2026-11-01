@@ -1375,6 +1375,24 @@ nav ul a:hover::after, nav ul a.active::after{width: 100%;}
   transform: scale(1.03);
 }
 
+/* Contained Modal Showcase for Dialogs & Steppers */
+.carousel-slide.contain-fit{
+  background: radial-gradient(circle at center, #0d1533 0%, #040711 100%);
+  padding: 10px;
+}
+.carousel-slide.contain-fit .proj-img{
+  width: auto;
+  height: auto;
+  max-width: 92%;
+  max-height: 92%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65);
+}
+.proj-card:hover .carousel-slide.contain-fit.active .proj-img{
+  transform: scale(1.02);
+}
+
 /* Swapping Controls: Next & Prev Buttons */
 .carousel-nav-btn{
   position: absolute;

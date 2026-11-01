@@ -514,8 +514,10 @@ Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBM
       case 'projects':
         appendTermOutput(`[FLAGSHIP BUILDS & INTERNSHIP PROJECTS]
 --------------------------------------------------
-1. ⚡ PharmCare — Full-Stack Pharmacy Management & POS System (Major Project)
-   - Stack: Java, Spring Boot, Spring Security, MySQL, Thymeleaf
+1. ⚡ PharmCare v2.0 — Pharmacy ERP & Pro AI Copilot Assistant (Major Project)
+   - Stack: Java, Spring Boot, Spring Security, Google Gemini API, MySQL, Hibernate, Thymeleaf
+   - Integrated PharmCare Pro AI Copilot (Gemini API + Local Medical Engine) for stock & sales analysis
+   - Patient medicine inquiries, generic salt formula substitute finder & WhatsApp doorstep delivery
    - Multi-Item POS dispensing & patient cart with % and flat ₹ discounts
    - Role-Based Access Control (RBAC) separating Owner & Cashier access
    - Supplier restock inward delivery logs & inventory discrepancy audits
@@ -523,12 +525,14 @@ Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBM
    - GitHub:    https://github.com/pratyaypal54-ops/pharmacy-app
    - Live Demo: https://pratyaypal54-ops.github.io/pharmacy-app/
 
-2. 🛒 TechStore — Full-Stack Electronics & Gadgets Store (CodeAlpha Internship)
-   - Stack: Node.js, Express, SQLite, JavaScript (ES6+), HTML5, CSS3, JWT
-   - Real-time search, multi-category filters & interactive price slider
-   - Slide-out cart drawer with live coupon verification (TECH15)
-   - Multi-step checkout pipeline with simulated card/UPI/COD payment
-   - Live order tracking timeline by ID & persistent user accounts
+2. 🛒 TechStore v2.0 — Modern Electronics Store & Gemini AI Assistant (CodeAlpha Internship)
+   - Stack: Node.js, Express, SQLite, Google Gemini API, JavaScript (ES6+), REST API, JWT
+   - Integrated Gemini AI shopping copilot with review summarizer (pros/cons) & 90-day price trend advisor
+   - Real-time search, multi-category filters & interactive price slider (₹1,000–₹1,00,000)
+   - Slide-out cart drawer with live coupon engine (TECH15) & free shipping progress meter
+   - Streamlined 3-step checkout pipeline (Card / UPI / COD) with printable receipts
+   - Live order tracking lifecycle engine (Pending → Processing → Shipped → Delivered)
+   - Multi-vendor seller onboarding workflows & authenticated buyer accounts
    - Live Demo: https://pratyaypal54-ops.github.io/CodeAlpha_EcommerceStore/
    - GitHub:    https://github.com/pratyaypal54-ops/CodeAlpha_EcommerceStore
 
