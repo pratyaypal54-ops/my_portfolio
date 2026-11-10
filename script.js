@@ -208,7 +208,27 @@ document.addEventListener('DOMContentLoaded', () => {
         p.draw();
       });
 
-      requestAnimationFrame(animateParticles);
+      if (isHeroVisible) {
+        animFrameId = requestAnimationFrame(animateParticles);
+      }
+    }
+
+    let isHeroVisible = true;
+    let animFrameId = null;
+
+    const heroSection = document.getElementById('top');
+    if (heroSection && 'IntersectionObserver' in window) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const wasVisible = isHeroVisible;
+          isHeroVisible = entry.isIntersecting;
+          if (!wasVisible && isHeroVisible) {
+            cancelAnimationFrame(animFrameId);
+            animFrameId = requestAnimationFrame(animateParticles);
+          }
+        });
+      }, { threshold: 0.05 });
+      heroObserver.observe(heroSection);
     }
 
     animateParticles();
@@ -220,7 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
       initStardustMotes();
     });
 
-    const heroSection = document.getElementById('top');
     if (heroSection) {
       heroSection.addEventListener('mousemove', (e) => {
         const rect = canvas.getBoundingClientRect();
@@ -300,35 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let speechTimeout = null;
   let isPetted = false;
 
-  const catIdleQuotes = [
-    "Purrr... peaceful evening stroll! 🌙",
-    "Soft paws, sharp mind! 🐾",
-    "Strolling by the village cottages! 🏡",
-    "Meow! Thanks for visiting! ✨",
-    "Writing clean code & staying cozy! ☕",
-    "Basking under the cyber moonlight! 🌟",
-    "*stretches happily* Meow! 😸"
-  ];
-
-  const catPetQuotes = [
-    "Purrrrrr! ❤️ That feels so nice!",
-    "Meow! *nuzzles hand softly* ✨",
-    "*content purring sounds* 🐾",
-    "You're awesome! Keep building great things! 🚀",
-    "Purrr... don't forget to take breaks! ☕",
-    "Happy cat vibes activated! 💖"
-  ];
-
-  function showCatBubble(msg, duration = 3000) {
-    if (!catBubble) return;
-    catBubble.textContent = msg;
-    catBubble.classList.add('show');
-    clearTimeout(speechTimeout);
-    speechTimeout = setTimeout(() => {
-      catBubble.classList.remove('show');
-    }, duration);
-  }
-
   function spawnCatHeart(x, y) {
     if (!catEffectsLayer) return;
     const heart = document.createElement('div');
@@ -341,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => heart.remove(), 1400);
   }
 
-  // Interactive Petting Reaction
+  // Interactive Petting Reaction (Gentle purr & hearts without chat bubbles)
   function petCat(clientX, clientY) {
     playPurr();
     if (catTrack) {
@@ -350,7 +340,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const clickY = clientY ? Math.max(20, rect.bottom - clientY) : 40;
       spawnCatHeart(clickX, clickY);
     }
-    showCatBubble(catPetQuotes[Math.floor(Math.random() * catPetQuotes.length)], 3200);
 
     if (interactiveCat && !isPetted) {
       isPetted = true;
@@ -375,15 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
-
-  // Periodic sweet thoughts while strolling
-  setInterval(() => {
-    if (catBubble && !catBubble.classList.contains('show')) {
-      if (Math.random() < 0.45) {
-        showCatBubble(catIdleQuotes[Math.floor(Math.random() * catIdleQuotes.length)], 3500);
-      }
-    }
-  }, 16000);
 
   /* ==========================================================================
      6. DEVELOPER TERMINAL / CLI CONSOLE
@@ -503,11 +483,12 @@ Curious engineer focused on Data Structures, Algorithms, Object-Oriented Softwar
         break;
 
       case 'skills':
-        appendTermOutput(`[TECH STACK]
+        appendTermOutput(`[TECH STACK & DEVELOPER TOOLKIT]
 --------------------------------------------------
+AI Tools:   Antigravity, Claude Code, OpenAI Codex, Gemini API, GitHub Copilot, Cursor
 Languages:  Java, JavaScript, Python, SQL, HTML, CSS
-Frameworks: Spring Boot, Spring Security, Hibernate, Thymeleaf
-Tools:      MySQL, Git, GitHub, VS Code, IntelliJ IDEA, Maven
+Frameworks: Spring Boot, Spring Security, Hibernate, Thymeleaf, Node.js & Express
+Tools:      MySQL, SQLite, Git, GitHub, VS Code, IntelliJ IDEA, Maven
 Concepts:   Data Structures & Algorithms, Object-Oriented Programming (OOP), DBMS`);
         break;
 
@@ -835,7 +816,18 @@ Email has been copied to your clipboard. Redirecting to contact section...`, 'su
     }
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  let isScrolling = false;
+  function onScrollThrottled() {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        handleScroll();
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScrollThrottled, { passive: true });
   handleScroll();
 
   if (backToTopBtn) {
@@ -876,12 +868,20 @@ Email has been copied to your clipboard. Redirecting to contact section...`, 'su
 
 
   /* ==========================================================================
-     12. 3D PERSPECTIVE TILT ON CARDS
+     12. 3D PERSPECTIVE TILT ON CARDS (SUBTLE & STABLE)
      ========================================================================== */
   const tiltCards = document.querySelectorAll('[data-tilt]');
 
   tiltCards.forEach(card => {
+    let isHovered = false;
+
+    card.addEventListener('mouseenter', () => {
+      isHovered = true;
+      card.style.transition = 'transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease';
+    });
+
     card.addEventListener('mousemove', (e) => {
+      if (!isHovered) return;
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -889,14 +889,26 @@ Email has been copied to your clipboard. Redirecting to contact section...`, 'su
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -7;
-      const rotateY = ((x - centerX) / centerX) * 7;
+      // Large project cards have a very gentle, subtle tilt (max ~1.8deg) to avoid wobbling
+      const isProj = card.classList.contains('proj-card');
+      const maxAngle = isProj ? 1.8 : 3.5;
+      const lift = isProj ? -5 : -4;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+      const rotateX = (((y - centerY) / centerY) * -maxAngle).toFixed(2);
+      const rotateY = (((x - centerX) / centerX) * maxAngle).toFixed(2);
+
+      card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(${lift}px)`;
     });
 
     card.addEventListener('mouseleave', () => {
+      isHovered = false;
+      card.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease';
       card.style.transform = '';
+      setTimeout(() => {
+        if (!isHovered) {
+          card.style.transition = '';
+        }
+      }, 400);
     });
   });
 
@@ -919,6 +931,13 @@ Email has been copied to your clipboard. Redirecting to contact section...`, 'su
     copyEmailBtn.addEventListener('click', (e) => {
       e.preventDefault();
       copyEmailToClipboard();
+      const origText = copyEmailBtn.innerHTML;
+      copyEmailBtn.innerHTML = "<i class='bx bx-check'></i> Copied!";
+      copyEmailBtn.classList.add('copied');
+      setTimeout(() => {
+        copyEmailBtn.innerHTML = origText;
+        copyEmailBtn.classList.remove('copied');
+      }, 2000);
     });
   }
 
